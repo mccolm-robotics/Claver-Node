@@ -1,1 +1,1 @@
-{"update": false, "version": "stable", "test": "hello"}
+{"update": false, "version": "stable"}

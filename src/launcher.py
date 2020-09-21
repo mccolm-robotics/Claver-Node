@@ -68,12 +68,12 @@ class ClaverNode(Gtk.Application):
         self.t1.daemon = True
         self.t1.start()
 
-        setproctitle.setproctitle('Claver Dispatch Node')
-        print(os.getpid())
-        process = psutil.Process(os.getpid())
-        print(process.name())
-        pid_name = check_output(["pidof", "Claver Dispatch Node"])
-        print(pid_name.decode())
+        # setproctitle.setproctitle('Claver Dispatch Node')
+        # print(os.getpid())
+        # process = psutil.Process(os.getpid())
+        # print(process.name())
+        # pid_name = check_output(["pidof", "Claver Dispatch Node"])
+        # print(pid_name.decode())
 
 
     def do_activate(self):
