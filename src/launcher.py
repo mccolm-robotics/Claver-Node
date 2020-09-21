@@ -1,13 +1,8 @@
 #!/usr/bin/python
 
 import json
-import os
 import sys
-from subprocess import check_output
-
 import gi
-import psutil
-import setproctitle
 import websockets
 
 gi.require_version('Gtk', '3.0')
