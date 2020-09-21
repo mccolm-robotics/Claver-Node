@@ -1,0 +1,6 @@
+psutil==5.7.2
+pycairo==1.19.1
+PyGObject==3.38.0
+PyGObject-stubs==0.0.2
+setproctitle==1.1.10
+websockets==8.1
