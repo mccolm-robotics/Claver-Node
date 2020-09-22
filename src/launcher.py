@@ -56,13 +56,14 @@ class ClaverWebsocket:
 
 
 class ClaverNode(Gtk.Application):
-    def __init__(self):
+    def __init__(self, callback=None):
         Gtk.Application.__init__(self)
-        self.connect("handle-local-options", self.on_handle_local_options)
         self.claverWebsocket = ClaverWebsocket(self)
         self.t1 = threading.Thread(target=self.claverWebsocket.run_asyncio)
         self.t1.daemon = True
         self.t1.start()
+        self.status_callback = callback
+        # self.status_callback(1)
 
         # setproctitle.setproctitle('Claver Dispatch Node')
         # print(os.getpid())
@@ -70,13 +71,6 @@ class ClaverNode(Gtk.Application):
         # print(process.name())
         # pid_name = check_output(["pidof", "Claver Dispatch Node"])
         # print(pid_name.decode())
-
-    def on_handle_local_options(self, application: Gio.Application, options: GLib.VariantDict):
-        # https://lazka.github.io/pgi-docs/#Gio-2.0/classes/Application.html#Gio.Application.signals.handle_local_options
-        # https://pygobject.readthedocs.io/en/latest/guide/api/signals.html
-        # https://developer.gnome.org/GtkApplication/#Dealing_with_the_command_line
-        # https://developer.gnome.org/gio/stable/GApplication.html#GApplicationClass
-        print("Handle Local Options")
 
     def do_activate(self):
         window = Gtk.Window(application=self)
