@@ -56,14 +56,14 @@ class ClaverWebsocket:
 
 
 class ClaverNode(Gtk.Application):
-    def __init__(self, callback=None):
+    def __init__(self, request_callback=None):
         Gtk.Application.__init__(self)
         self.claverWebsocket = ClaverWebsocket(self)
         self.t1 = threading.Thread(target=self.claverWebsocket.run_asyncio)
         self.t1.daemon = True
         self.t1.start()
-        self.status_callback = callback
-        # self.status_callback(1)
+        self.request_callback = request_callback
+        self.request_callback(0)
 
         # setproctitle.setproctitle('Claver Dispatch Node')
         # print(os.getpid())
