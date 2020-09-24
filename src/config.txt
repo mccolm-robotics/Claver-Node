@@ -1,1 +1,1 @@
-{"update": false, "version": "stable"}
+{"branch": "stable"}
