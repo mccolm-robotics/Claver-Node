@@ -63,7 +63,8 @@ class ClaverNode(Gtk.Application):
         self.t1.daemon = True
         self.t1.start()
         self.request_callback = request_callback
-        self.request_callback(0)
+        if request_callback is not None:
+            self.request_callback(0)
 
         # setproctitle.setproctitle('Claver Dispatch Node')
         # print(os.getpid())
