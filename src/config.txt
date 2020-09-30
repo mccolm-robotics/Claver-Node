@@ -1,1 +1,1 @@
-{"branch": "stable"}
+{"node_branch": "stable"}
